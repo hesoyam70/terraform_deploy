@@ -19,4 +19,9 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
 gcloud iam service-accounts keys create "./terraform.json"  \
   --iam-account=$GOOGLE_SERVICE_ACCOUNT
 
-terraform state list
+
+update your project id: step-0/terraform.tfvars
+terraaform init
+terraform plan
+terraform apply
+terraform destroy
