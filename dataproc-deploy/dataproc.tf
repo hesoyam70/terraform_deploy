@@ -1,6 +1,6 @@
 resource "google_dataproc_cluster" "mycluster" {
-  name                          = "${var.prefix}-dataproc"
-  region                        = var.region
+  name       = "${var.prefix}-dataproc"
+  region     = var.region
   depends_on = [google_compute_subnetwork.us_east1]
 
   cluster_config {
@@ -34,8 +34,8 @@ resource "google_dataproc_cluster" "mycluster" {
     }
 
     gce_cluster_config {
-      zone = "${var.region}-b"
-      subnetwork             = google_compute_subnetwork.us_east1.id
+      zone                   = "${var.region}-b"
+      subnetwork             = google_compute_subnetwork.us_east1.0.id
       service_account        = google_service_account.dataproc-svc.email
       service_account_scopes = ["cloud-platform"]
     }

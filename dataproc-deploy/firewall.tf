@@ -1,7 +1,7 @@
 resource "google_compute_firewall" "firewall_rules" {
-  depends_on = [google_compute_network.dataproc_network]
-  name    = "${var.prefix}-cluster-firewall-rules"
-  network = google_compute_network.dataproc_network.name
+#  depends_on = [google_compute_network.dataproc_network.id]
+  name       = "${var.prefix}-cluster-firewall-rules"
+  network    = google_compute_network.dataproc_network.name
 
   // Allow ping
   allow {

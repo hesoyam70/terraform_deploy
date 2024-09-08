@@ -5,7 +5,7 @@ variable "project_id" {
 variable "prefix" {
   type        = string
   description = "ID of the Google Project"
-  default = "DEV"
+  default     = "dev"
 }
 variable "region" {
   type        = string
