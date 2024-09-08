@@ -36,13 +36,13 @@ variable "dataproc_workers_count" {
 variable "dataproc_master_bootdisk" {
   type        = number
   description = "primary disk attached to master node, specified in GB"
-  default     = 500
+  default     = 100
 }
 
 variable "dataproc_worker_bootdisk" {
   type        = number
   description = "primary disk attached to master node, specified in GB"
-  default     = 500
+  default     = 100
 }
 
 variable "worker_local_ssd" {
