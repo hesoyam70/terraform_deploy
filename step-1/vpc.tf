@@ -2,8 +2,7 @@
 resource "google_compute_network" "my_vpc_network" {
     project = var.project_id
     name                    = var.network
-    auto_create_subnetworks = false  
-    routing_mode            = "GLOBAL"  
+    auto_create_subnetworks = false
     description             = "This is a VPC network"
     mtu                     = 1460 
 }
