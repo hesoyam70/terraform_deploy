@@ -1,4 +1,4 @@
-name: Get secrets from secret manager
+name: Check GCP WIF Auth
 on:
   workflow_dispatch
 jobs:
