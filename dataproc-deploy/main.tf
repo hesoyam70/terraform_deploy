@@ -21,19 +21,19 @@ module "iam" {
   bucket_name = module.bucket.bucket_name
 }
 
-module "cluster_template" {
-  source      = "./modules/dataproc-workflow-template"
-  prefix      = var.prefix
-  region      = var.region
-  svc_email   = module.iam.svc_email_name
-  bucket_name = module.bucket.bucket_name
-  subnet_id   = module.custom_vpc.subnet_id
-}
-#module "cluster" {
-#  source      = "modules/dataproc-cluster"
+#module "cluster_template" {
+#  source      = "./modules/dataproc-workflow-template"
 #  prefix      = var.prefix
 #  region      = var.region
 #  svc_email   = module.iam.svc_email_name
 #  bucket_name = module.bucket.bucket_name
 #  subnet_id   = module.custom_vpc.subnet_id
 #}
+module "cluster" {
+  source      = "./modules/dataproc-cluster"
+  prefix      = var.prefix
+  region      = var.region
+  svc_email   = module.iam.svc_email_name
+  bucket_name = module.bucket.bucket_name
+  subnet_id   = module.custom_vpc.subnet_id
+}

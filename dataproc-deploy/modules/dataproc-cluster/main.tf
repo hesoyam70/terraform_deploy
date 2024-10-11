@@ -35,9 +35,10 @@ resource "google_dataproc_cluster" "mycluster" {
 
     gce_cluster_config {
       zone                   = "${var.region}-b"
-      subnetwork             = var.subnet_id##
-      service_account        = var.svc_email##
+      subnetwork             = var.subnet_id
+      service_account        = var.svc_email
       service_account_scopes = ["cloud-platform"]
+      internal_ip_only = true
     }
   }
 }
