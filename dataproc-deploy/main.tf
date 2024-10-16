@@ -7,7 +7,7 @@ module "custom_vpc" {
 
 module "bucket" {
   source     = "./modules/storage"
-  name       = "dataproc-config"
+  name       = "dataproc-config-sharath"
   project_id = var.project_id
   prefix     = var.prefix
   region     = var.region
@@ -36,4 +36,10 @@ module "cluster" {
   svc_email   = module.iam.svc_email_name
   bucket_name = module.bucket.bucket_name
   subnet_id   = module.custom_vpc.subnet_id
+}
+module "CloudSqlDb" {
+  source            = "./modules/CloudSql"
+  project_id        = var.project_id
+  network_id        = module.custom_vpc.vpc_id
+  network_self_link = module.custom_vpc.vpc_self_link
 }
